@@ -1,0 +1,40 @@
+### Maven ###
+target/
+*.log
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### VS Code ###
+.vscode/
+
+### Eclipse / STS ###
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### Secrets / local configuration ###
+.env
+.env.*
+application-local.properties
+application-secret.properties
+
+### OS ###
+.DS_Store
+Thumbs.db
