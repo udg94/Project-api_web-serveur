@@ -1,4 +1,4 @@
-package com.example.projectapi;
+package com.example.projectapi.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;

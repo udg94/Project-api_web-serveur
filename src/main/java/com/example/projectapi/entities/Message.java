@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 public class Message {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long expediteur_id;
     private Long destination_id;
