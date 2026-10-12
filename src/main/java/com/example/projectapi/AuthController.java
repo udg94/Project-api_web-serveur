@@ -61,7 +61,7 @@ public class AuthController {
         if (is_user.isEmpty()) {throw new IllegalArgumentException("user not found");}
 
         User save_user = is_user.get();
-        if (save_user.getMdp().equals(passwordEncoder.encode(user.getMdp()))){
+        if (passwordEncoder.matches(user.getMdp(), save_user.getMdp())){
             String token = jwtService.generateToken(save_user.getEmail());
 
             return new AuthResponse(save_user.getId(), save_user.getUsername(), save_user.getEmail(), token);
