@@ -11,21 +11,8 @@ public class AuthSession {
     @Id
     private Long userId;
 
-
-    @OneToOne
-    @MapsId
-    private User user;
-
     private String token;
     private LocalDateTime expiresAt;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public AuthSession(Long userId, String token, LocalDateTime expiresAt) {
         this.userId = userId;

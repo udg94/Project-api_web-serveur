@@ -29,7 +29,11 @@ public class APPController {
         this.jwtService = jwtService;
         this.authSessionRepository = authSessionRepository;
     }
-
+    @GetMapping()
+    public String hello() {
+        return "Hello World";
+    }
+    
     @PostMapping("/comptes")
     public AuthResponse addUser(@RequestBody User user) {
         if(user.getEmail() == null || user.getEmail().isEmpty()){
@@ -49,7 +53,7 @@ public class APPController {
         new_user.setMdp(passwordEncoder.encode(user.getMdp()));
         new_user = userRepository.save(new_user);
 
-        String token = jwtService.generateToken(new_user.getEmail());
+        String token = jwtService.generateToken(new_user);
         AuthSession session = new AuthSession(new_user.getId(), token, LocalDateTime.now().plusHours(1));
 
         authSessionRepository.save(session);
@@ -70,7 +74,7 @@ public class APPController {
 
         User save_user = is_user.get();
         if (passwordEncoder.matches(user.getMdp(), save_user.getMdp())){
-            String token = jwtService.generateToken(save_user.getEmail());
+            String token = jwtService.generateToken(save_user);
 
             AuthSession session = new AuthSession(save_user.getId(), token, LocalDateTime.now().plusHours(1));
 

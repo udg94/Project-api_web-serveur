@@ -38,7 +38,8 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/api/comptes/**",
                                 "/api/auth/login",
-                                "/error"
+                                "/error",
+                                "/api"
                         ).permitAll()
                         .anyRequest().authenticated()
                 ).addFilterBefore(
