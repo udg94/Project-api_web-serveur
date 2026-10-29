@@ -1,0 +1,73 @@
+# ================================================
+# Projet Messagerie - Spring Boot + Android (Java)
+# ================================================
+
+# --------- Java / Maven / Gradle ---------
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# Maven (backend)
+**/target/
+.mvn/timing.properties
+
+# Gradle (backend / Android)
+.gradle/
+**/.gradle/
+**/build/
+!**/src/**/build/
+
+# Ne PAS ignorer gradlew, gradlew.bat ou gradle/wrapper :
+# ils permettent de construire le projet sur une autre machine.
+
+# --------- Android Studio / IDE ---------
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.externalNativeBuild/
+.cxx/
+local.properties
+**/local.properties
+captures/
+.navigation/
+
+# --------- Fichiers locaux et secrets ---------
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+secrets.properties
+**/secrets.properties
+
+# Configurations propres à une machine ou contenant des secrets
+application-local.properties
+application-local.yml
+application-local.yaml
+**/application-local.properties
+**/application-local.yml
+**/application-local.yaml
+
+# --------- Systèmes d'exploitation ---------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --------- Editeurs / temporaires ---------
+.vscode/
+*.swp
+*.swo
+*~
+*.tmp
+
+# Note : les sources, les fichiers Gradle/Maven et gradle/wrapper/
+# doivent rester versionnés. Les APK construits dans app/build/
+# sont exclus, mais un APK de démonstration placé dans APK/
+# peut être ajouté volontairement au dépôt.
